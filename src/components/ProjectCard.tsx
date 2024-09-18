@@ -49,8 +49,8 @@ export const ProjectCard = ({ Project: d }: Props) => {
 
             <div className="mt-4 p-4 border-t border-gray-200">
 
-            <p className="mt-2">{d.description.slice(0, 128)}...</p>
-            <div className="flex flex-wrap gap-4 mt-4">
+              <p className="mt-2">{d.description.slice(0, 1000)}...</p>
+              <div className="flex flex-wrap gap-4 mt-4">
                 {d.githubRepo && (
                   <a
                     href={d.githubRepo}
@@ -84,11 +84,16 @@ export const ProjectCard = ({ Project: d }: Props) => {
               </div>
             </div>
 
-            {d.donationAddress && d.donationAddress !== 'nan' && (
-              <Button variant="secondary" className="mt-4" onClick={onDonate}>
-                Donate USDC
+            <div className="flex flex-col space-y-4">
+              {d.donationAddress && d.donationAddress !== 'nan' && (
+                <Button variant="secondary" className="mt-4 " onClick={onDonate}>
+                  Donate
+                </Button>
+              )}
+              <Button className="mt-4" onClick={onDonate}>
+                Updates
               </Button>
-            )}
+            </div>
           </div>
         </div>
 

@@ -9,6 +9,7 @@ type ProjectsContextProps = {
 
 export type Project = {
   donationAddress: string
+  eventStartedAt: string
   slidesUrl: string
   demoUrl: string
   githubRepo: string
