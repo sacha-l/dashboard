@@ -12,7 +12,7 @@ import { ReDotProvider, ReDotChainProvider } from '@reactive-dot/react'
 import { Suspense } from 'react'
 import { AccountContextProvider } from './contexts/AccountsContext'
 import { LocksContextProvider } from './contexts/LocksContext'
-import { DelegateeContextProvider } from '@/contexts/DelegateesContext'
+import { ProjectContextProvider } from '@/contexts/ProjectsContext'
 import { NetworkContextProvider } from './contexts/NetworkContext'
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
           <ReDotChainProvider chainId="polkadot">
             <Suspense>
               <NetworkContextProvider>
-                <DelegateeContextProvider>
+                <ProjectContextProvider>
                   <AccountContextProvider>
                     <LocksContextProvider>
                       <TooltipProvider>
@@ -41,7 +41,7 @@ const App = () => {
                       </TooltipProvider>
                     </LocksContextProvider>
                   </AccountContextProvider>
-                </DelegateeContextProvider>
+                </ProjectContextProvider>
               </NetworkContextProvider>
             </Suspense>
           </ReDotChainProvider>

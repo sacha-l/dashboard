@@ -8,7 +8,7 @@ export const config = {
   chains: {
     polkadot: {
       descriptor: dot,
-      provider: getWsProvider('wss://dot-rpc.stakeworld.io'),
+      provider: getWsProvider('wss://polkadot-asset-hub-rpc.polkadot.io'),
     },
   },
   wallets: [new InjectedWalletAggregator()],

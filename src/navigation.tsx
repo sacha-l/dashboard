@@ -41,6 +41,7 @@ export const Navigation = () => {
         />
         {routes.map((r) => (
           <Tooltip key={r.name}>
+    
             <TooltipTrigger asChild>
               <a
                 className={linkStyle(pathname, '/' + (r.link || ''))}
@@ -80,7 +81,7 @@ export const Navigation = () => {
         <Tooltip>
           <TooltipTrigger asChild>
             <a
-              href="https://github.com/delegit-xyz/dashboard/"
+              href="https://github.com/JoinWebZero/hackathons/blob/main/past-submissions/symmetry-2024.md/"
               target="_blank"
               className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
             >

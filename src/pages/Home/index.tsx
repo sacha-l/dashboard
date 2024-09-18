@@ -1,19 +1,18 @@
-import { LocksCard } from '@/components/LocksCard'
-import { useDelegatees } from '@/contexts/DelegateesContext'
-import { DelegateeCard } from '@/components/DelegateeCard'
+import { useProjects } from '@/contexts/ProjectsContext';
+import { ProjectCard } from '@/components/ProjectCard';
+import { About } from '@/components/About';
 
 export const Home = () => {
-  const { delegetees } = useDelegatees()
+  const { projects } = useProjects();
 
   return (
     <main className="grid flex-1 items-start gap-4 p-4 sm:mx-[5%] xl:mx-[20%] mx-0 sm:px-6 sm:py-0 md:gap-8">
-      <LocksCard />
-      <h1 className="font-unbounded text-primary flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
-        Delegetees
-      </h1>
+      <About />
       <div className="pageTop">
-        {delegetees?.map((d) => <DelegateeCard delegatee={d} />)}
+        {projects?.map((d, index) => (
+          <ProjectCard key={index} Project={d} />
+        ))}
       </div>
     </main>
-  )
-}
+  );
+};

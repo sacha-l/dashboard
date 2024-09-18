@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
+import { useProjects } from '@/contexts/ProjectsContext'
 
 import { Home } from '@/pages/Home'
-import { Delegate } from '@/pages/Delegate'
+import { ProjectPage } from '@/pages/ProjectPage'
 import { toast } from 'sonner'
 import { useEffect } from 'react'
 import { useNetwork } from './contexts/NetworkContext'
@@ -15,8 +16,8 @@ const pages = [
     element: <Home />,
   },
   {
-    path: '/delegate/:address',
-    element: <Delegate />,
+    path: '/project/:donationAddress',
+    element: <ProjectPage />,
   },
 ]
 
