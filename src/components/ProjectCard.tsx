@@ -41,13 +41,53 @@ export const ProjectCard = ({ Project: d }: Props) => {
           </div> */}
           <div className="p-2 w-full">
             <h2 className="font-bold text-xl">{d.projectName}</h2>
-            <Button variant="outline" className="mt-4" onClick={onSupport}>
+
+            {/* <Button variant="outline" className="mt-4" onClick={onSupport}>
               {showDetails ? 'Hide Details' : 'View Details'}
-            </Button>
+            </Button> */}
+
+
+            <div className="mt-4 p-4 border-t border-gray-200">
+
+            <p className="mt-2">{d.description.slice(0, 128)}...</p>
+            <div className="flex flex-wrap gap-4 mt-4">
+                {d.githubRepo && (
+                  <a
+                    href={d.githubRepo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    GitHub Repository
+                  </a>
+                )}
+                {d.demoUrl && d.demoUrl !== 'nan' && (
+                  <a
+                    href={d.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Project Demo
+                  </a>
+                )}
+                {d.slidesUrl && d.slidesUrl !== 'nan' && (
+                  <a
+                    href={d.slidesUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Link to Slides
+                  </a>
+                )}
+              </div>
+            </div>
+
             {d.donationAddress && d.donationAddress !== 'nan' && (
-            <Button variant="secondary" className="mt-4" onClick={onDonate}>
-              Donate USDC
-            </Button>
+              <Button variant="secondary" className="mt-4" onClick={onDonate}>
+                Donate USDC
+              </Button>
             )}
           </div>
         </div>
@@ -69,7 +109,7 @@ export const ProjectCard = ({ Project: d }: Props) => {
             )}
 
             <div className="flex flex-wrap gap-4 mt-4">
-              {d.githubRepo &&  (
+              {d.githubRepo && (
                 <a
                   href={d.githubRepo}
                   target="_blank"
